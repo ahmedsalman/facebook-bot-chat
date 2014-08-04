@@ -1,0 +1,1 @@
+This application is build on django application framework using python as language. Purpose of this project is to automatically send chat messages to your facebook friends. Plus you can use it to update status.
