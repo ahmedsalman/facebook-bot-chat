@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+<style>
+.control-group input[type="text"], input[type="password"]{width:325px; height:25px;}
+</style>
+
+<div class="row">
+    <h3 style="margin-left:2%">Join Us today</h3>
+
+    <div class="span6" style="border-right: thin solid #DCDCDC;">
+        {% if form.errors %}
+            {% for error in form.non_field_errors %}
+                <p class="error">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post" action="">{% csrf_token %}
+        <div class="control-group">
+            <label class="control-label" for="id_username">Username<span class="rq">*</span></label>
+            <div class="controls">
+                {{ form.username }}
+            </div>
+            {% if form.username.errors %}
+                <span class="error">{{ form.username.errors.as_text }}</span>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="control-group clearfix">
+            <label class="control-label" for="id_email">Email Address <span class="rq">*</span></label>
+            <div class="controls">
+                {{ form.email }}
+            </div>
+            {% if form.email.errors %}
+                <span class="error">{{ form.email.errors.as_text }}</span>
+            {% endif %}
+        </div>
+        <div class="control-group pull-left" style="margin-right:10px;">
+            <label class="control-label" for="id_password1">Password <span class="rq">*</span></label>
+            <div class="controls">
+                {{ form.password1 }}
+            </div>
+                {% if form.password1.errors %}
+            <span class="error">{{ form.password1.errors.as_text }}</span>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+        <div class="controls pull-left">
+            <label class="control-label" for="id_password2">Re-Enter Password <span class="rq">*</span></label>
+            <div class="controls">
+                {{ form.password2 }}
+            </div>
+            {% if form.password2.errors %}
+                <span class="error">{{ form.password2.errors.as_text }}</span>
+            {% endif %}
+        </div>
+        <div class="clearfix"></div>
+        <button type="submit" class="btn btn-info">Sign Up</button>
+        </form>
+    </div>
+
+
+
+    <div class="offset1 span4 omb_login">
+
+    </br>
+    <div class="omb_login">
+	    <div class="omb_socialButtons">
+    	    <div class="offset1 span3">
+	            <a href="/login/facebook/?next=/" class="btn btn-lg btn-block omb_btn-facebook">
+		            <i class="fa fa-facebook visible-xs"></i>
+		            <span class="hidden-xs">Facebook</span>
+	            </a>
+            </div>
+	    </div>
+	</div>
+
+    <div class="clearfix"></div>
+    </br></br></br>
+
+    <div class="omb_login">
+	    <div class="omb_socialButtons">
+    	    <div class="offset1 span3">
+	            <a href="{% url 'socialauth_begin' 'twitter' %}?next={{ request.path }}" class="btn btn-lg btn-block omb_btn-google">
+		            <i class="fa fa-google-plus visible-xs"></i>
+		            <span class="hidden-xs">Twitter</span>
+	            </a>
+            </div>
+	    </div>
+	</div>
+
+    <div class="clearfix"></div>
+    </br></br></br>
+
+    <div class="omb_login">
+	    <div class="omb_socialButtons">
+    	    <div class="offset1 span3">
+	            <a href="/login/google-oauth2/?next=/" class="btn btn-lg btn-block omb_btn-twitter">
+		            <i class="fa fa-twitter visible-xs"></i>
+		            <span class="hidden-xs">Google+</span>
+	            </a>
+            </div>
+	    </div>
+	</div>
+    <div class="clearfix"></div>
+
+    </div>
+
+
+
+</div>
+
+  
+{% endblock %}
+
+{% block content-related %}
+<p>Fill out the form to the left (all fields are required), and your
+account will be created; you'll be sent an email with instructions on how
+to finish your registration.</p>
+
+<p>We'll only use your email to send you signup instructions. We hate spam
+as much as you do.</p>
+
+<p>This account will let you log into the ticket tracker, claim tickets,
+and be exempt from spam filtering.</p>
+{% endblock %}

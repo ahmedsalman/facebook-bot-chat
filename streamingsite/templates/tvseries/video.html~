@@ -1,0 +1,115 @@
+{% extends "tvseries/base.html" %}
+{% load tracking_tags %}
+{% load flaggit_tags %}
+
+
+{% block title %}Home Page{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block genere %}
+{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<div class="page" itemscope="" itemtype="">     
+    <div class="row-fluid">
+
+
+
+        <div class="movie-info span12">
+<iframe width='560' height='315' frameborder='0' allowfullscreen src='http://www.firedrive.com/embed/87519089D814CB54'></iframe>
+	    </div>
+
+
+
+
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Links</a></li>
+        <li><a href="#tab2" data-toggle="tab">Comments</a></li>
+    </ul>
+    <div class="tab-content">
+
+
+<div class="tab-pane active" id="tab1">
+
+<table id="streamlinks" class="table table-hover table-striped sort-table">
+				  <thead>
+					<tr class="headersRow">
+					  <th>Source</th>
+					  <th class="greyefecct">Language</th>
+					  <th>Age</th>
+					  <th class="greyefecct">Report Link</th>
+					  <th>Votes</th>
+					</tr>
+				  </thead>
+				  <tbody>
+{% for obj in episode.weblinks.all %}
+<tr id="pt0" class=" hoplayedto quaCam langEnglish">
+<td class="sideleft">
+    <a rel="nofollow" target="_blank" href="{{obj.link}}">{{obj.name}}</a>
+</td>
+<td><img data-original-title="English" rel="tooltip" src="{{ STATIC_URL }}img/English.gif"></td>
+<td>{{ obj.date_added|timesince }} old</td>
+<td>
+
+<form method="post" action="{% url 'flaggit' %}">
+{% csrf_token %}
+
+<div class="hidden">;
+    <input type="hidden" name="content_type" value="{{ content_type.id }}" />
+    <input type="hidden" name="object_id" value="{{ obj.id }}" />
+</div>
+
+<input type="submit" value="Report Link" />
+</form>
+
+</td>
+<td>
+
+<a href="{% url 'vote_movie' obj.id +1 %}" data-toggle="modal" class="btn btn-small green">
+    <img src="{{ STATIC_URL }}img/vote_up.png"/>
+    <span>{{obj.total_upvotes}}</span>
+</a>
+<a href="{% url 'vote_movie' obj.id -1 %}" data-toggle="modal" class="btn btn-small red">
+<img src="{{ STATIC_URL }}img/vote_down.png"/>
+<span>{{obj.total_downvotes}}</span>
+</a>					
+
+</td>
+</tr>
+{% endfor %}
+					<tr class="showmore">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td><i class="icon-plus"></i> <span id="loadmore">Show More</span></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				  </tbody>
+				</table>
+
+</div>
+
+
+<div class="tab-pane" id="tab2">
+    <div class="fb-comments" data-href="https://localhost:8000/movie/watch-the-departed-online/574/" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+</div>
+</div>
+</div>
+
+
+        </div> 
+    </div> 
+</div> 
+{% endblock %}
+
+{% block left_side_bar %}
+{% endblock %}
+
+{% block extra_body %}
+
+
+{% endblock %}

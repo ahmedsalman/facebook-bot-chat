@@ -1,0 +1,22 @@
+__init__.py
+import signals
+from django.db.models import signals
+from django.contrib.contenttypes.models import ContentType
+from django.dispatch import dispatcher
+
+
+from hitcount.models import HitCount, Hit
+
+from django.db.models.signals import post_save
+
+
+# method for updating
+def update_count_and_alive(sender, instance, **kwargs)
+    print ">>>>>>instance>>>>>>helllo em here frind>>>>>>>",instance
+
+# register the signal
+post_save.connect(update_count_and_alive, sender=HitCount, dispatch_uid="update_stock_count")
+
+
+# register the signal
+post_save.connect(update_count_and_alive, sender=Hit, dispatch_uid="update_stock_count")

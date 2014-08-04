@@ -1,0 +1,25 @@
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+admin.autodiscover()
+
+import registration
+from hitcount.views import update_hit_count_ajax
+
+urlpatterns = patterns('',
+#     Examples:
+    url(r'^$', 'movies.views.index', name='index'),
+
+    url(r'^movie/', include('movies.urls')),
+    url(r'^tv-shows/', include('tvseries.urls')),
+
+
+    url(r'^user-item-request-form/', include('itemrequest.urls')),
+    url(r'^tracking/', include('tracking.urls')),
+
+    url(r'^tutorial/ajax/hit/$', update_hit_count_ajax, name='hitcount_update_ajax'),
+
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('registration.urls')),
+    url(r'^', include('social_auth.urls')),
+    url('^', include('flaggit.urls')),
+)

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+
+<style>
+.control-group input[type="text"], input[type="password"]{width:325px; height:25px;}
+</style>
+
+
+<div class="container" style="margin-top:30px;">
+   
+ <!--CONTENTS-->
+      
+    <div class="span12 alpha">
+        <div class="span7 mainContent alpha">
+        
+        </div>
+     
+    <div class="span5" style="position:relative;">
+    
+    <div class="sign">
+    	<ul class="buttons clearfix">
+        <li><a class="btn selected showSingle" target="1"><i class="signInIcon"></i> Already member ?</a></li>
+        <li><a class="btn  showSingle" target="2"><i class="signUpIcon"></i> Register Now !</a></li>
+        </ul>
+      
+      <div id="div1" class="targetDiv">
+      <div class="signHeader">
+      <h2>Sign In</h2> 
+      </div>
+
+    {% if form.errors %}
+      {% for error in form.non_field_errors %}
+        <p class="error">{{ error }}</p>
+      {% endfor %}
+    {% endif %}
+    
+    <form method="post" action="{% url 'auth_login' %}?next={{ next|default:"/" }}">{% csrf_token %}
+    <div class="control-group">
+    <label class="control-label" for="id_username">Username <span class="rq">*</span></label>{% if form.username.errors %} <span class="error">{{ form.username.errors|join:", " }}</span>{% endif %}
+    <div class="controls">
+    {{ form.username }}
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="id_password">Password <span class="rq">*</span></label>{% if form.password.errors %} <span class="error">{{ form.password.errors|join:", " }}</span>{% endif %}
+    <div class="controls">
+    {{ form.password }}
+    </div>
+    </div>
+    <div class="control-group" style="margin-bottom:20px;">
+    <div class="controls">
+    <label class="checkbox">
+    <input type="checkbox"> Remember me
+<!--    <span class="pull-right"><a href="#">Forgot Password</a></span>-->
+    <span class="pull-right"><a href="{% url 'passwordreset' %}">Forgot Password</a></span>
+    </label>
+    </div></div>
+    <div class="control-group">
+    <div class="controls">
+    <button type="submit" class="btn btn-info">Sign in</button> or 
+    <a href="#"><img src="{{ STATIC_URL}}/img/facebookconnect.png"/></a>
+    </div>
+    </div>
+    </form>
+   
+    <div class="signFooter">
+   <!-- <a href="#" onclick="return showHide();">Sign up</a> -->
+    </div>
+   
+   </div>
+      
+      <div id="div2" class="targetDiv"  >
+      <div class="signHeader"><h2>Sign up</h2> </div>
+    <form method="post" action="{% url 'registration_register' %}?next={{ next|default:'/' }}" class=''>{% csrf_token %}
+    <div class="control-group">
+    <label class="control-label" for="inputName">Username <span class="rq">*</span></label>
+    <div class="controls">
+      {{ form_registration.username}}
+    </div>
+    </div> 
+    <div class="control-group pull-left" style="margin-right:10px;">
+    <label class="control-label" for="inputFirstName">First Name <span class="rq">*</span></label>
+    <div class="controls">
+      {{ form_registration.first_name}}
+    </div>
+    </div>
+    <div class="control-group pull-left">
+    <label class="control-label" for="inputLastName">Last Name <span class="rq">*</span></label>
+    <div class="controls">
+      {{ form_registration.last_name}}
+    </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputEmail">Email Address <span class="rq">*</span></label>
+    <div class="controls">
+      {{ form_registration.email }}
+    </div>
+    </div>
+    
+    <div class="control-group pull-left" style="margin-right:10px;">
+    <label class="control-label" for="inputPassword">Password <span class="rq">*</span></label>
+    <div class="controls">
+      {{ form_registration.password1 }}
+    </div>
+    </div>
+    
+    
+    <div class="control-group pull-left">
+    <label class="control-label" for="inputPassword">Re-Enter Password <span class="rq">*</span></label>
+    <div class="controls">
+      {{ form_registration.password2 }}
+    </div>
+    </div>
+    
+    <div class="control-group">
+    <div class="controls">
+    <button type="submit" class="btn btn-info btn-block">Sign Up</button>
+    
+    </div>
+    </div>
+    </form>
+    <div class="signFooter">
+    <!--<a href="#" onclick="return showHide();">Sign in</a> -->
+    </div>
+    </div>
+      
+     
+    
+    
+    
+    </div>
+    </div>
+    
+    
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript">
+ $(document).ready(function(){   
+  $('.targetDiv').hide();
+$('.targetDiv').first().show();
+$('.showSingle').click(function () {
+    $('.targetDiv').hide();
+    $('.showSingle').removeClass('selected');
+    $('#div' + $(this).attr('target')).show();
+    $(this).addClass('selected');
+});
+  
+  
+});
+</script>
+{% endblock %}
+{% block content-related %}
+<p>If you don't have an account, you can <a href="/accounts/register/">sign
+up</a> for one.
+{% endblock %}

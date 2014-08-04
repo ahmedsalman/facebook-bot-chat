@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Request movie or season{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container">
+
+{% if form_submitted %}
+        <h3>Your request has been submitted. We will try to add it into the system.</h3>
+        <h3>Thank you</h3>
+{% else %}
+        <form method="post" action="{% url 'itemrequestview' %}">{% csrf_token %}
+        <h3>Request form for TV-Shows and Movies</h3>
+
+            <div class="control-group">
+                <div class="controls">
+                <span style="margin-right:62px">Title</span>
+                    {{ form.title }}
+                </div>
+                {% if form.title.errors %} <span class="error">{{ form.title.errors|join:", " }}</span>{% endif %}
+            </div>
+
+            <div class="control-group hidden">
+                <div class="controls">
+                <span style="margin-right:62px">User</span>
+                    {{ form.user }}
+                </div>
+                {% if form.user.errors %} <span class="error">{{ form.user.errors|join:", " }}</span>{% endif %}
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                <span >Request Type</span>
+                    {{ form.request_type }}
+                </div>
+                {% if form.request_type.errors %} <span class="error">{{ form.request_type.errors|join:", " }}</span>{% endif %}
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                <span style="margin-right:55px">Email</span>
+                    {{ form.email }}
+                </div>
+                {% if form.email.errors %} <span class="error">{{ form.email.errors|join:", " }}</span>{% endif %}
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                <span  style="margin-right:8px">IMDB Source</span>
+                    {{ form.imbd_source }}
+                </div>
+                {% if form.imbd_source.errors %} <span class="error">{{ form.imbd_source.errors|join:", " }}</span>{% endif %}
+            </div>
+
+
+            <div class="control-group">
+                <div class="controls">
+                    {{ form.captcha }}
+                </div>
+                {% if form.captcha.errors %} <span class="error">{{ form.captcha.errors|join:", " }}</span>{% endif %}
+            </div>
+
+
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-info">Sign in</button>
+                </div>
+            </div>
+
+
+        </form>
+{% endif %}
+</div>
+
+{% endblock %}
+
+
+

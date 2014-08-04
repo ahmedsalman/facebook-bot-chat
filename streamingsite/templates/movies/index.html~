@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+
+{% block content %}
+<div class="span9">
+            <div class="widget">
+                <span class="pull-right more"><img src="{{ STATIC_URL }}img/plus.jpg" /><a href="{% url 'featuredmovies' %}">More</a></span>
+                <h5><img src="{{ STATIC_URL }}img/featured.png" /> Featured Movies</h5>
+                <ul class="thumbnails">
+                {% for item in featured %}
+                    <li class="span2">
+                        <a data-original-title="{{item.title}} ( {{item.year}} )" href="{% url 'detail' item.title|slugify item.id %}" class="thumbnail" title="{{item.title}}" rel="tooltip">
+                            <img class="thumbimg" src="{{item.photo.imagelink}}">
+                            <div class="caption">{{item.title}}</div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            <div class="widget">
+                <span class="pull-right more"><img src="{{ STATIC_URL }}img/plus.jpg" /> <a href="{% url 'recentlyaddedmovies' %}">More</a></span>
+                <h5><img src="{{ STATIC_URL }}img/eye.png"/> Recently Added Movies</h5>
+                <ul class="thumbnails">
+                {% for item in peoplearewatching %}
+                    <li class="span2">
+                        <a data-original-title="{{item.title}} ( {{item.year}} )" href="{% url 'detail' item.title|slugify item.id %}" class="thumbnail" title="{{item.title}}" rel="tooltip">
+                            <img class="thumbimg" src="{{item.photo.imagelink}}">
+                            <div class="caption">{{item.title}}</div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            <div class="widget">
+                <span class="pull-right more"><img src="{{ STATIC_URL }}img/plus.jpg" /> <a href="#">More</a></span>
+                <h5><img src="{{ STATIC_URL }}img/play.png"/> People Are Watching</h5>
+                <ul class="thumbnails">
+                {% for item in peoplearewatching %}
+                    <li class="span2">
+                        <a data-original-title="{{item.title}} ( {{item.year}} )" href="{% url 'detail' item.title|slugify item.id %}" class="thumbnail" title="{{item.title}}" rel="tooltip">
+                            <img class="thumbimg" src="{{item.photo.imagelink}}">
+                            <div class="caption">{{item.title}}</div>
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+
+
+            <div class="widget">
+                <span class="pull-right more"><img src="{{ STATIC_URL }}img/plus.jpg" /> <a href="{% url 'movies' %}">More</a></span>
+                <h5><img src="{{ STATIC_URL }}img/movie.png"/> More Movies</h5>
+                <ul class="thumbnails">
+                {% for item in movies %}
+                    <li class="span2">
+                        <a data-original-title="{{item.title}} ( {{item.year}} )" href="{% url 'detail' item.title|slugify item.id %}" title="{{item.title}}" rel="tooltip">
+                            <img class="thumbimg" src="{{item.photo.imagelink}}">
+                            <div class="caption">{{item.title}}</div>
+                        </a>
+                    </li>
+                    {% if forloop.counter|divisibleby:5 %}<div class="clearfix"></div>{% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+
+            {% comment %}
+                <table class="table table-striped table-hover">
+                    <caption>Most Popular Shows of This Week</caption>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><a href="#">The Big Bang Theory</a></td>
+                            <td><i class="icon-arrow-up"></i></td>
+
+                            <td>6</td>
+                            <td><a href="#">Dracula</a></td>
+                            <td><i class="icon-arrow-up"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            {% endcomment %}
+</div>
+{% endblock %}
+
+
+{% block extra_body %}{% endblock %}

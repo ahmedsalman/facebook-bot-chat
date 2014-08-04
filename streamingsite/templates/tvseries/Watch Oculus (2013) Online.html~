@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+
+{% block content %}
+<div class="page" itemscope="" itemtype="">     
+    <div class="row-fluid">
+
+    <!--    show image start-->
+        <div class="movie-cover span2">
+            <img src="style/MV5BMzE1NzM4MjEyNV5BMl5BanBnXkFtZTgwMjYzMjMzMTE.jpg" alt="Oculus Movie Poster" class="img-polaroid">
+        </div>
+    <!--    show image end-->
+
+        <div class="movie-info span10">
+            <div class="movie-details span7">
+                <div class="row" style="margin-left: 0px;">
+                    <div class="span7" itemprop="name"><h2 class="pull-left" itemprop="name">Oculus</h2></div>
+                        <div class="span4 .offset2">
+                            <div class="pull-right" itemprop="aggregateRating" itemscope="" itemtype="">
+		                        <div id="movie_44045" class="star" data-rating=" 9" style="cursor: default; width: 200px;" title="9">
+			                        <img src="http://www.iwatchonline.to/assets/img/star-on.png" alt="9" title="9">
+			                        <img src="http://www.iwatchonline.to/assets/img/star-off.png" alt="10" title="9">
+			                        <input type="hidden" name="score" value="9" readonly="readonly">
+		                        </div>
+	                        </div>
+                            <div class="span1"><span itemprop="ratingValue">8</span>/<span itemprop="bestRating">10</span></div>
+			            </div>
+				        <div class="clearfix"></div>
+
+                        <table class="table table-condensed">
+                        <tbody>
+                        <tr>
+                            <td class="sidebar"><button class="btn btn-inverse btn-mini btn-block disabled" type="button">R</button></td>
+                            <td class="sidebar"><a href="#">2013</a></td>
+                            <td class="sidebar grey">105 min</td>
+                            <td class="sideleft"><a itemprop="Genre" href="#">Horror</a></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="sideleft" colspan="4"><p class="description" itemprop="description"> >>>>>> description <<<<<< </p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="sideleft"><strong>Actors:</strong> </td>
+                            <td class="sideleft" colspan="3" itemprop="actor"><a href="" itemprop="name">Rory Cochrane</a></td>
+                        </tr>
+                        <tr>
+                            <td class="sideleft"><strong>Directors:</strong> </td>
+                            <td class="sideleft" colspan="3" itemprop="director"><a href="" itemprop="director">Mike Flanagan</a></td>
+                        </tr>
+                        <tr>
+                            <td class="sideleft"><strong>Country:</strong> </td>
+                            <td class="sideleft" colspan="3"><a href="#">USA</a></td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+			    </div>
+		    </div>
+
+
+
+
+
+<table id="streamlinks" class="table table-hover table-striped sort-table">
+				  <thead>
+					<tr class="headersRow">
+					  <th>&nbsp;</th>
+					  <th class="greyefecct">Language</th>
+					  <th>Age</th>
+					  <th class="greyefecct">Quality</th>
+					  <th>Votes</th>
+					  <th>&nbsp;</th>
+					</tr>
+				  </thead>
+				  <tbody>
+				
+									<tr id="pt0" class=" hoplayedto quaCam langEnglish">
+										<td class="sideleft">
+					
+					<a rel="nofollow" target="_blank" href="http://www.iwatchonline.to/play/1351797">
+					<img alt="" src="http://www.iwatchonline.to/assets/images/filhosts/played.to.gif"> Played.to
+					<!--<div class="btn-group pull-left">
+						  <a class="btn" rel="tooltip" title="" data-toggle="modal" href="http://www.iwatchonline.to/play/1351797?watch=1" target="_blank" rel="nofollow"data-original-title="Play"><i class="icon-play"></i></a>
+						  <a class="btn" rel="tooltip" title="" data-toggle="modal" href="http://www.iwatchonline.to/play/1351797" target="_blank" rel="nofollow"data-original-title="Visit Site"><i class="icon-random"></i></a>
+					</div>		-->
+					</a></td>
+										  <td><img data-original-title="English" rel="tooltip" src="http://www.iwatchonline.to/assets/images/English.gif"></td>
+					  <td>7 seconds</td>
+					  <td>Cam</td>
+					  <td>
+					   
+							<a href="#usersignin" data-toggle="modal" class="btn btn-small green">
+							<i class="icon-thumbs-up"></i> 
+								<span>0</span>
+							</a> 
+							<a href="#usersignin" data-toggle="modal" class="btn btn-small red">
+								<i class="icon-thumbs-down"></i> 
+								<span>0</span>
+							</a>					
+												
+					  </td>
+					</tr>
+															<tr id="pt1" class=" hoplayedto quaCam langEnglish">
+										<td class="sideleft">
+					
+					<a rel="nofollow" target="_blank" href="http://www.iwatchonline.to/play/1351798">
+					<img alt="" src="http://www.iwatchonline.to/assets/images/filhosts/played.to.gif"> Played.to
+					<!--<div class="btn-group pull-left">
+						  <a class="btn" rel="tooltip" title="" data-toggle="modal" href="http://www.iwatchonline.to/play/1351798?watch=1" target="_blank" rel="nofollow"data-original-title="Play"><i class="icon-play"></i></a>
+						  <a class="btn" rel="tooltip" title="" data-toggle="modal" href="http://www.iwatchonline.to/play/1351798" target="_blank" rel="nofollow"data-original-title="Visit Site"><i class="icon-random"></i></a>
+					</div>		-->
+					</a></td>
+										  <td><img data-original-title="English" rel="tooltip" src="http://www.iwatchonline.to/assets/images/English.gif"></td>
+					  <td>7 seconds</td>
+					  <td>Cam</td>
+					  <td>
+					   
+							<a href="#usersignin" data-toggle="modal" class="btn btn-small green">
+							<i class="icon-thumbs-up"></i> 
+								<span>0</span>
+							</a> 
+							<a href="#usersignin" data-toggle="modal" class="btn btn-small red">
+								<i class="icon-thumbs-down"></i> 
+								<span>0</span>
+							</a>					
+												
+					  </td>
+					</tr>
+															<tr id="pt2" class=" hoflashxtv quaCam langEnglish">
+										<td class="sideleft">
+					
+					<a rel="nofollow" target="_blank" href="http://www.iwatchonline.to/play/1351799">
+					<img alt="" src="http://www.iwatchonline.to/assets/images/filhosts/flashx.tv.gif"> Flashx.tv
+					<!--<div class="btn-group pull-left">
+						  <a class="btn" rel="tooltip" title="" data-toggle="modal" href="http://www.iwatchonline.to/play/1351799?watch=1" target="_blank" rel="nofollow"data-original-title="Play"><i class="icon-play"></i></a>
+						  <a class="btn" rel="tooltip" title="" data-toggle="modal" href="http://www.iwatchonline.to/play/1351799" target="_blank" rel="nofollow"data-original-title="Visit Site"><i class="icon-random"></i></a>
+					</div>		-->
+					</a></td>
+										  <td><img data-original-title="English" rel="tooltip" src="http://www.iwatchonline.to/assets/images/English.gif"></td>
+					  <td>7 seconds</td>
+					  <td>Cam</td>
+					  <td>
+					   
+							<a href="#usersignin" data-toggle="modal" class="btn btn-small green">
+							<i class="icon-thumbs-up"></i> 
+								<span>0</span>
+							</a> 
+							<a href="#usersignin" data-toggle="modal" class="btn btn-small red">
+								<i class="icon-thumbs-down"></i> 
+								<span>0</span>
+							</a>					
+												
+					  </td>
+					</tr>
+						
+														
+					<tr class="showmore">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td><i class="icon-plus"></i> <span id="loadmore">Show More</span></td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				  </tbody>
+				</table>
+
+
+
+
+
+
+        </div> 
+    </div> 
+</div> 
+{% endblock %}

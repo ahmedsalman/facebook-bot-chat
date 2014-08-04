@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/felloz/!svn/ver/103/felloz/templates/registration
+END
+login_registration_forms.html
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/felloz/!svn/ver/103/felloz/templates/registration/login_registration_forms.html
+END
+login.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/felloz/!svn/ver/99/felloz/templates/registration/login.html
+END
+password_reset_done.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/felloz/!svn/ver/98/felloz/templates/registration/password_reset_done.html
+END
+logout.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/felloz/!svn/ver/9/felloz/templates/registration/logout.html
+END
+base.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/felloz/!svn/ver/9/felloz/templates/registration/base.html
+END
+password_reset_email.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/felloz/!svn/ver/99/felloz/templates/registration/password_reset_email.html
+END
+password_change_done.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/felloz/!svn/ver/9/felloz/templates/registration/password_change_done.html
+END
+password_reset_confirm.html
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/felloz/!svn/ver/98/felloz/templates/registration/password_reset_confirm.html
+END
+login_error.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/felloz/!svn/ver/9/felloz/templates/registration/login_error.html
+END
+activation_email.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/felloz/!svn/ver/9/felloz/templates/registration/activation_email.txt
+END
+password_reset_form.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/felloz/!svn/ver/97/felloz/templates/registration/password_reset_form.html
+END
+activation_complete.html
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/felloz/!svn/ver/9/felloz/templates/registration/activation_complete.html
+END
+password_change_form.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/felloz/!svn/ver/97/felloz/templates/registration/password_change_form.html
+END
+password_reset_complete.html
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/felloz/!svn/ver/98/felloz/templates/registration/password_reset_complete.html
+END
+registration_form.html
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/felloz/!svn/ver/68/felloz/templates/registration/registration_form.html
+END
+activate.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/felloz/!svn/ver/9/felloz/templates/registration/activate.html
+END
+activation_email_subject.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/felloz/!svn/ver/9/felloz/templates/registration/activation_email_subject.txt
+END
+registration_complete.html
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/felloz/!svn/ver/9/felloz/templates/registration/registration_complete.html
+END

@@ -1,0 +1,87 @@
+{% extends "tvseries/base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block genere %}
+{% endblock %}
+
+{% block content %}
+<div class="span9">
+			<div class="well  well-small sorting">
+
+			
+			<div class="widget widget-page" id="listings">
+<table id="streamlinks" class="table table-hover table-striped sort-table">
+				  <thead>
+					<tr class="headersRow">
+					  <th class="greyefecct">Title</th>
+					  <th>Season</th>
+					  <th class="greyefecct">Episode</th>
+					  <th>Votes</th>
+					  <th>&nbsp;</th>
+					</tr>
+				  </thead>
+				  <tbody>
+                        {% for obj in episodes %}
+                        <tr id="pt0" class=" hoplayedto quaCam langEnglish">
+                        <td class="sideleft">
+                            <a href="{% url 'episode_detail' obj.title|slugify obj.id %}">{{obj.title}}</a>
+                        </td>
+
+                        <td>{{ obj.season}}</td>
+                        <td>{{ obj.episode}}</td>
+                        <td>
+                            <a href="{% url 'vote_movie' obj.id +1 %}" data-toggle="modal" class="btn btn-small green">
+                                <img src="{{ STATIC_URL }}img/vote_up.png"/>
+                                <span>{{obj.total_upvotes}}</span>
+                            </a>
+                            <a href="{% url 'vote_movie' obj.id -1 %}" data-toggle="modal" class="btn btn-small red">
+                            <img src="{{ STATIC_URL }}img/vote_down.png"/>
+                            <span>{{obj.total_downvotes}}</span>
+                            </a>
+                        </td>
+                        <td>{{ obj.weblinks.all|length }}</td>
+
+                        </tr>
+                        {% endfor %}
+                        <tr class="showmore">
+	                        <td>&nbsp;</td>
+	                        <td>&nbsp;</td>
+	                        <td><i class="icon-plus"></i> <span id="loadmore">Show More</span></td>
+	                        <td>&nbsp;</td>
+	                        <td>&nbsp;</td>
+                        </tr>
+				  </tbody>
+				</table>
+				
+				<center>
+                    <div class="pagination">
+                        <ul>
+                            {% if movies.number != '0' %}
+                                <li class="prev"><a href="?page=1">&larr; First</a></li>
+                            {% endif %}
+
+                           {% for pagenumber in page_range %}
+                                {% if pagenumber == movies.number %}
+                                <li class="active"><a href="?page={{pagenumber}}">{{pagenumber}}</a></li>
+                                {% else %}
+                                <li class="pagea"><a href="?page={{pagenumber}}">{{pagenumber}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if movies.number != pagination_of_movies.num_pages %}
+                                <li class="prev"><a href="?page={{ pagination_of_movies.num_pages }}">Last &rarr;</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </center>
+            </div>
+       </div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_body %}{% endblock %}
